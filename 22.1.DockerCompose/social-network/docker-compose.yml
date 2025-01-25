@@ -1,0 +1,18 @@
+services:
+  authapi:
+    image: authapi
+    ports:
+      - "9000:9000"
+    networks:
+      - social_network
+
+  socialapi:
+    image: socialapi
+    ports:
+      - "3500:3500"
+    networks:
+      - social_network
+
+networks:
+  social_network:
+    driver: bridge
